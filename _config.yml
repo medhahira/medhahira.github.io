@@ -12,7 +12,7 @@ title                    : "Medha Hira"
 title_separator          : "-"
 name                     : &name "Medha Hira"
 description              : &description "SWE Intern'24 @ Google | CSE Senior @ IIITD | Ex-SAP, IBM Research | UG Research @ MIDAS, CAI, IIITH"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://medhahira.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "medhahira/medhahira.github.io"
 
