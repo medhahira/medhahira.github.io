@@ -21,7 +21,7 @@ repository               : "medhahira/medhahira.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "medha_photo.jpg"
+  avatar           : "medha_photo.png"
   name             : "Medha Hira"
   pronouns         : # example: "she/her"  
   bio              : "SWE Intern'24 @ Google | CSE Senior @ IIITD | Ex-SAP, IBM Research | UG Research @ MIDAS, CAI, IIITH"
