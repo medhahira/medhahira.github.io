@@ -1,0 +1,59 @@
+{% include base_path %}
+
+{% if project.header.teaser %}
+  {% capture teaser %}{{ project.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if project.id %}
+  {% assign title = project.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = project.title %}
+{% endif %}
+
+<head>
+  <style>
+    p.small {
+      margin-bottom: 0;
+      margin-top: 0;
+      font-size: 12pt;
+    }
+  </style>
+</head>
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src=
+          {% if teaser contains "://" %}
+            "{{ teaser }}"
+          {% else %}
+            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+          {% endif %}
+          alt="">
+      </div>
+    {% endif %}
+
+    <h3 class="archive__item-title" itemprop="headline">
+      {% if project.link %}
+        <a href="{{ project.link }}">{{ title }}</a>
+      {% else %}
+        <a href="{{ base_path }}{{ project.url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
+    </h3>
+
+    {% if project.description %}
+      <p class="small">{{ project.description }}</p>
+    {% endif %}
+
+    {% if project.tech_stack %}
+      <p class="small"><strong>Tech Stack:</strong> {{ project.tech_stack }}</p>
+    {% endif %}
+
+    {% if project.github_link %}
+      <p class="small">[<a href="{{ project.github_link }}">GitHub</a>]</p>
+    {% endif %}
+  </article>
+</div>
