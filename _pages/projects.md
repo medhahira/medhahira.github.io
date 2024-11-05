@@ -11,12 +11,12 @@ author_profile: true
 {% include base_path %}
 
 {% for project in site.port %}
-  ### [{{ project.title }}]({{ project.github_link }})
+  ### [{{ projects.title }}]({{ projects.github_link }})
   
-  **Description:** {{ project.description }}
+  **Description:** {{ projects.description }}
   
-  **Tech Stack:** {{ project.tech_stack }}
+  **Tech Stack:** {{ projects.tech_stack }}
   
-  {% include archive-single.html %}
+  {% include archive-projects.html %}
 {% endfor %}
 
