@@ -7,9 +7,10 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my academic and professional portfolio! I am a final-year B.Tech student specializing in Computer Science Engineering at the Indraprastha Institute of Information Technology, Delhi, with a deep interest in machine learning, natural language processing, and data science. My experience spans industry roles at Google, IBM Research, and SAP, and research contributions at academic labs such as SBI Lab and MIDAS.
+Hi there! Welcome to my academic portfolio 😊
+I am a final-year B.Tech student specializing in Computer Science Engineering at the Indraprastha Institute of Information Technology, Delhi, with a deep interest in machine learning, natural language processing, and data science. My experience spans industry roles at Google, IBM Research, and SAP, and research contributions at academic labs such as SBI Lab and MIDAS.
 
-My work is centered around enhancing multilingual NLP, improving speech processing systems, and mitigating bias in LLMs. I am passionate about advancing AI technology to create impactful solutions and have a strong foundation in programming languages, data processing tools, and frameworks like TensorFlow, PyTorch, and OpenCV.
+My work is primarily centered around enhancing multilingual NLP, improving speech processing systems, and mitigating bias in LLMs. I am passionate about advancing AI technology to create impactful solutions and have a strong foundation in programming languages, data processing tools, and frameworks like TensorFlow, PyTorch, and OpenCV.
 
 ## Recent Highlights
 
@@ -20,7 +21,7 @@ My work is centered around enhancing multilingual NLP, improving speech processi
 
 ## Key Projects
 
-- **Cross Lingual Transfer Learning for Indian Languages**: Explored cross-lingual learning techniques for low-resource languages, using PyTorch and NLP tools.
+- **Cross-Lingual Transfer Learning for Indian Languages**: Explored cross-lingual learning techniques for low-resource languages, using PyTorch and NLP tools.
 - **Custom Linux Shell**: Designed a shell replicating Linux commands with C and system calls.
 - **Tank Stars Game**: Developed a multiplayer Java game using OOP and the LibGDX framework.
 - **Custom Assembler and Simulator**: Created a simulator for a hypothetical ISA with memory access visualization.
