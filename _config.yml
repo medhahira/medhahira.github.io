@@ -34,7 +34,7 @@ author:
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.co.in/citations?user=qzqfAKcAAAAJ&hl=en"
   impactstory      : # URL
-  orcid            : "https://orcid.org/0009-0007-7477-3064"
+  orcid            : #"https://orcid.org/0009-0007-7477-3064"
   semantic         : # URL
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
@@ -45,7 +45,7 @@ author:
   codepen          : # Username
   dribbble         : # Username
   github           : "https://github.com/medhahira"
-  kaggle           : "medhahira"
+  kaggle           : #"medhahira"
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
