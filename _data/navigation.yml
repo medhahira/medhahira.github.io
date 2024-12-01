@@ -18,8 +18,8 @@ main:
     url: /projects/
     
   - title: "CV"
-    url: /cv/
-  - title: "Blog Posts"
-    url: /year-archive/
+    URL: "https://drive.google.com/file/d/1mYMAOboAfukiZbaWqqAFtgimfJj5neHx/view?usp=sharing"
+  # - title: "Blog Posts"
+  #   url: /year-archive/
 #  - title: "Guide"
 #    url: /markdown/
