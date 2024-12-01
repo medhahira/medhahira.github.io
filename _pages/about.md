@@ -1,16 +1,16 @@
 ---
 permalink: /
-title: "Medha Hira's Academic Portfolio"
+title: "Medha Hira"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Hi there! Welcome to my academic portfolio 😊
-I am a final-year B.Tech student specializing in Computer Science Engineering at the Indraprastha Institute of Information Technology, Delhi, with a deep interest in machine learning, natural language processing, and data science. My experience spans industry roles at Google, IBM Research, and SAP, and research contributions at academic labs such as SBI Lab and MIDAS.
+I am Medha Hira, a final-year B.Tech student specializing in Computer Science Engineering at the Indraprastha Institute of Information Technology, Delhi. I have been fortunate to be advised by [Professor Anubha Gupta](https://www.iiitd.ac.in/anubha) and [Professor Rajiv Ratn Shah](https://www.iiitd.edu.in/~rajivratn/) from IIIT-Delhi, as well as [Dr. Sameep Mehta](https://research.ibm.com/people/sameep-mehta) and [Dr. Nishtha Madaan](https://nishthaa.github.io/) from IBM Research India!
 
-My work is primarily centered around enhancing multilingual NLP, improving speech processing systems, and mitigating bias in LLMs. I am passionate about advancing AI technology to create impactful solutions and have a strong foundation in programming languages, data processing tools, and frameworks like TensorFlow, PyTorch, and OpenCV.
+Since early 2023, I’ve been immersed in the exciting domains of Large Language Models (LLMs), Natural Language Processing (NLP), and Speech Processing. Through my research, I aim to tackle challenges at the intersection of these fields, 
+I am particularly interested in contributing to advancements in model safety, multilingual communication, and emotion understanding in speech.
 
 ## News
 - **September 2024**: My team secured an all-India Rank 6 in the Amazon ML Challenge!
@@ -24,4 +24,6 @@ My work is primarily centered around enhancing multilingual NLP, improving speec
 - **August 2023**: I was awarded the Summer Undergraduate Research Fellowship (SURF) at IIIT-Delhi.
 - **January 2023**: Became a member of the [MIDAS Lab @ IIIT-D](https://midas.iiitd.ac.in/) and began my research journey!
 
-Thank you for visiting my page! Please browse through the sections above for a full list of my publications, projects, and work experience. Connect with me on [GitHub](https://github.com/medhahira) and [LinkedIn](https://www.linkedin.com/in/medhahira/).
+Thank you for visiting my page!
+
+Connect with me on [GitHub](https://github.com/medhahira) and [LinkedIn](https://www.linkedin.com/in/medhahira/).
