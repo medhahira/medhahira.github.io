@@ -12,6 +12,8 @@ I am Medha Hira, a final-year B.Tech student specializing in Computer Science En
 Since early 2023, I’ve been immersed in the exciting domains of Large Language Models (LLMs), Natural Language Processing (NLP), and Speech Processing. Through my research, I aim to tackle challenges at the intersection of these fields, 
 I am particularly interested in contributing to advancements in model safety, multilingual communication, and emotion understanding in speech.
 
+In addition to my academic endeavors, I have had the opportunity to intern as a Software Engineer at Google, India and as a Data Science Intern at SAP, U.A.E.
+
 ## News
 - **September 2024**: My team secured an all-India Rank 6 in the Amazon ML Challenge!
 - **August 2024**: Marked the successful completion of my Google SWE Internship and the commencement of the last year of my undergrad.
