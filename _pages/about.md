@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am Medha Hira, a final-year B.Tech student specializing in Computer Science Engineering at the Indraprastha Institute of Information Technology, Delhi. I have been fortunate to be advised by [Professor Anubha Gupta](https://www.iiitd.ac.in/anubha) and [Professor Rajiv Ratn Shah](https://www.iiitd.edu.in/~rajivratn/) from IIIT-Delhi, as well as [Dr. Sameep Mehta](https://research.ibm.com/people/sameep-mehta) and [Dr. Nishtha Madaan](https://nishthaa.github.io/) from IBM Research India!
+I am Medha Hira, a final-year B.Tech student specializing in Computer Science Engineering at the Indraprastha Institute of Information Technology, Delhi. I have been fortunate to be advised by [Dr. Anubha Gupta](https://www.iiitd.ac.in/anubha) and [Dr. Rajiv Ratn Shah](https://www.iiitd.edu.in/~rajivratn/) from IIIT-Delhi, as well as [Dr. Sameep Mehta](https://research.ibm.com/people/sameep-mehta) and [Dr. Nishtha Madaan](https://nishthaa.github.io/) from IBM Research India!
 
 Since early 2023, I’ve been immersed in the exciting domains of Large Language Models (LLMs), Natural Language Processing (NLP), and Speech Processing. Through my research, I aim to tackle challenges at the intersection of these fields, 
 I am particularly interested in contributing to advancements in model safety, multilingual communication, and emotion understanding in speech.
