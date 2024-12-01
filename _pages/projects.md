@@ -17,7 +17,7 @@ author_profile: true
 
 - Examined cross-lingual transfer in multilingual models, comparing intra-family and inter-family (Indo-Aryan and Dravidian language families) knowledge transfer.  
 - Evaluated five Indian languages across Sentiment Analysis, Hate Speech Detection, and Named Entity Recognition tasks using fine-tuned multilingual BERT models.
-
+**GitHub:** [Repository Link](https://github.com/medhahira/CSE556-NLP-Project)
 ---
 
 ### Intelligent Browser Assistant with Multimodal Retrieval Capabilities  
@@ -27,7 +27,7 @@ author_profile: true
 - Developed a browser extension for seamless user assistance with features like real-time web scraping, multimodal retrieval (text, images, audio), and LLM integration.  
 - Leveraged RAG pipelines for accurate, context-aware responses, reduced human dependency, and improved accessibility.  
 - The project optimized user interactions and delivered a robust AI-driven browsing experience.
-
+**GitHub:** [Repository Link](https://github.com/Information-Detrieval/project)
 ---
 
 ### Online Retail Store  
@@ -36,7 +36,7 @@ author_profile: true
 
 - Designed a command-line interface simulating an online retail store with tailored functionalities for Customers, Delivery Partners, Distributors, Admins, and an Affiliated NGO.  
 - Optimized database operations with MySQL queries for efficient data fetching, insertion, and deletion.
-
+**GitHub:** [Repository Link](https://github.com/medhahira/OnlineRetailStore)
 ---
 
 ### Tank Stars  
@@ -45,5 +45,5 @@ author_profile: true
 
 - Built a dual-player strategy game with Object-Oriented Programming concepts and a sudden-death mode using the LibGDX framework.  
 - Applied Object-Oriented Programming concepts and designed UML Class, Use Case Diagrams to visualize game architecture and flow.
-
+**GitHub:** [Repository Link](https://github.com/medhahira/Tank-Stars-Game)
 {% include archive-projects.html %}
