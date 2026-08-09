@@ -147,24 +147,27 @@ img { max-width: 100%; }
 /* --- Theme toggle ----------------------------------------------- */
 
 .theme-toggle {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  margin-left: 6px;
-  padding: 0;
+  display: inline-flex;
+  align-items: center;
   flex: none;
-  border: 1px solid var(--line);
+  margin-left: 4px;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--rule);
   border-radius: 999px;
   background: transparent;
   color: var(--nav-link);
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1;
+  text-transform: lowercase;
   cursor: pointer;
-  transition: border-color 160ms ease, color 160ms ease;
+  transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
 }
 
 .theme-toggle:hover {
-  border-color: var(--rule);
-  color: var(--ink);
+  border-color: var(--link);
+  color: var(--link);
+  background: var(--chip-bg);
 }
 
 .theme-toggle:focus-visible {
@@ -172,9 +175,16 @@ img { max-width: 100%; }
   outline-offset: 2px;
 }
 
+.tt-face {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
 .theme-toggle svg {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
+  flex: none;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.7;
@@ -182,24 +192,20 @@ img { max-width: 100%; }
   stroke-linejoin: round;
 }
 
-/* Show the icon for the mode the button switches TO. Light shows a moon,
-   dark shows a sun. Mirrors the three-state token logic above. */
-.theme-toggle .icon-sun { display: none; }
-.theme-toggle .icon-moon { display: block; }
+/* Show the face for the mode the button switches TO: a moon reading "dark"
+   while light, a sun reading "light" while dark. Mirrors the token logic. */
+.tt-to-light { display: none; }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
-  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+  :root:not([data-theme="light"]) .tt-to-light { display: inline-flex; }
+  :root:not([data-theme="light"]) .tt-to-dark { display: none; }
 }
 
-:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
-:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .tt-to-light { display: inline-flex; }
+:root[data-theme="dark"] .tt-to-dark { display: none; }
 
-:root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
-:root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
-
-/* Without JS the toggle cannot work, so don't show a dead control. */
-html:not(.js) .theme-toggle { display: none; }
+:root[data-theme="light"] .tt-to-light { display: none; }
+:root[data-theme="light"] .tt-to-dark { display: inline-flex; }
 
 /* --- Hero ------------------------------------------------------ */
 
