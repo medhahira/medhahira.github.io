@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Medha Hira"
 title_separator          : "-"
 name                     : &name "Medha Hira"
-description              : &description "SWE Intern'24 @ Google | CSE Senior @ IIITD | Ex-SAP, IBM Research | UG Research @ MIDAS, CAI, IIITH"
+description              : &description "MS in CS & NLP @ CMU LTI | SWE (ML) Intern @ Google | Ex-Microsoft Research, Google, SAP, IBM Research"
 url                      : https://medhahira.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "medhahira/medhahira.github.io"
@@ -24,11 +24,11 @@ author:
   avatar           : "medha_photo.png"
   name             : "Medha Hira"
   pronouns         : # example: "she/her"  
-  bio              : "SWE Intern'24 @ Google | CSE Senior @ IIITD | Ex-SAP, IBM Research | UG Research @ MIDAS, CAI, IIITH"
-  location         : "Delhi, India"
-  employer         : "IIIT-D"
+  bio              : "MS in CS & NLP @ CMU LTI | SWE (ML) Intern @ Google | Ex-Microsoft Research, Google, SAP, IBM Research"
+  location         : "Pittsburgh, PA"
+  employer         : "Carnegie Mellon University"
   uri              : # URL
-  email            : "medha21265@iiitd.ac.in"
+  email            : "mhira@cs.cmu.edu"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile

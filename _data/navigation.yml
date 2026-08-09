@@ -9,7 +9,9 @@ main:
     url: /publications/
   - title: "Projects"
     url: /projects/
-  - title: "Resume"
+  - title: "CV"
+    url: /cv/
+  - title: "Resume (PDF)"
     url: "https://drive.google.com/file/d/1mYMAOboAfukiZbaWqqAFtgimfJj5neHx/view?usp=sharing"
 #  - title: "Talks"
 #    url: /talks/
