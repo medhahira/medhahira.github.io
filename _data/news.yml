@@ -1,0 +1,41 @@
+# Home page News section. Newest first.
+# "text" accepts inline markdown (links, bold, etc.).
+
+- date: "May 2026"
+  text: "Started my Software Engineering (ML) Internship at Google, San Jose, working on Gemini Enterprise."
+
+- date: "2026"
+  text: "Paper titled \"MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation\" accepted at [ACL 2026](https://aclanthology.org/2026.acl-long.105/)."
+
+- date: "2025"
+  text: "Paper titled \"[Enhancing Scientific Visual Question Answering via Vision-Caption aware Supervised Fine-Tuning](https://arxiv.org/abs/2509.16628)\" accepted at the LAVA Workshop, ACM Multimedia 2025."
+
+- date: "August 2025"
+  text: "Began my MS in CS & NLP at the [Language Technologies Institute](https://lti.cs.cmu.edu/), Carnegie Mellon University."
+
+- date: "June 2025"
+  text: "Graduated from IIIT-Delhi with a B.Tech in Computer Science and Engineering."
+
+- date: "January 2025"
+  text: "Started as a Research Intern at Microsoft Research India, working on Microsoft Copilot's Agentic Deep Research and on safety in tool-using LLM agents."
+
+- date: "September 2024"
+  text: "My team secured an all-India Rank 6 in the Amazon ML Challenge!"
+
+- date: "June 2024"
+  text: "Paper titled \"[Exploring Multilingual Unseen Speaker Emotion Recognition: Leveraging Co-Attention Cues in Multitask Learning](https://www.isca-archive.org/interspeech_2024/goel24_interspeech.html)\" accepted at INTERSPEECH 2024."
+
+- date: "May 2024"
+  text: "Started my Software Engineering Internship at Google, Bangalore."
+
+- date: "February 2024"
+  text: "2 papers on speech processing and prosody transfer accepted at the Tiny Track at ICLR 2024!"
+
+- date: "November 2023"
+  text: "Work done during my GRM internship at IBM Research accepted at AAAI'24 (Demo Track)."
+
+- date: "August 2023"
+  text: "I was awarded the Summer Undergraduate Research Fellowship (SURF) at IIIT-Delhi."
+
+- date: "January 2023"
+  text: "Became a member of the [MIDAS Lab @ IIIT-D](https://midas.iiitd.ac.in/) and began my research journey!"

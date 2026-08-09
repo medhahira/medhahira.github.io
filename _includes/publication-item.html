@@ -1,0 +1,20 @@
+<article class="pub-item">
+  <div class="pub-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h5"></path><path d="M10 12h5M10 16h5"></path></svg>
+  </div>
+  <div class="pub-main">
+    <h3>
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ post.title }}</a>
+      {% else %}
+        {{ post.title }}
+      {% endif %}
+    </h3>
+    {% if post.authors %}<p>{{ post.authors }}</p>{% endif %}
+    <span>{{ post.venue }}{% if post.date %} · {{ post.date | date: "%Y" }}{% endif %}</span>
+  </div>
+  <div class="pub-links">
+    {% if post.paperurl %}<a href="{{ post.paperurl }}">[pdf]</a>{% endif %}
+    {% if post.codeurl %}<a href="{{ post.codeurl }}">[code]</a>{% endif %}
+  </div>
+</article>

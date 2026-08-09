@@ -1,0 +1,68 @@
+---
+layout: default
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-inner" data-animate>
+    <div class="identity-row">
+      <img src="{{ site.author.avatar | prepend: '/images/' | relative_url }}"
+           alt="{{ site.author.name }}" class="portrait">
+      <div class="identity-text">
+        <h1 id="hero-title">{{ site.author.name }}</h1>
+        <a class="email-line" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+        <div class="identity-links" aria-label="Profile links">
+          <div class="identity-links-row">
+            <a href="{{ '/cv/' | relative_url }}">cv</a>
+            <span>·</span>
+            <a href="{{ site.author.googlescholar }}">google scholar</a>
+            <span>·</span>
+            <a href="{{ site.author.github }}">github</a>
+          </div>
+          <div class="identity-links-row">
+            <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">linkedin</a>
+            <span>·</span>
+            <a href="{{ '/publications/' | relative_url }}">publications</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% if page.lead %}<p class="hero-lead">{{ page.lead | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+    {% if page.note %}<p class="hero-note">{{ page.note | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="section" id="about" data-animate>
+  <div class="section-label">About</div>
+  <div class="section-body prose">
+    {{ content }}
+  </div>
+</section>
+
+{% if site.data.news and site.data.news.size > 0 %}
+<section class="section" id="news" data-animate>
+  <div class="section-label">News</div>
+  <div class="section-body">
+    <ul class="news-list">
+      {% for item in site.data.news %}
+        <li>
+          <span class="news-date">{{ item.date }}</span>
+          <span class="news-text">{{ item.text | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+<section class="publications section" id="publications" data-animate>
+  <div class="section-head">
+    <h2>Selected Publications</h2>
+    <a href="{{ '/publications/' | relative_url }}" class="view-all">View all publications →</a>
+  </div>
+  <div class="pub-list">
+    {% assign selected = site.publications | sort: 'date' | reverse %}
+    {% for post in selected limit: 5 %}
+      {% include publication-item.html %}
+    {% endfor %}
+  </div>
+</section>

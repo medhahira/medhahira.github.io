@@ -1,16 +1,15 @@
 ---
-layout: archive
+layout: page
 title: "Publications"
 permalink: /publications/
-author_profile: true
+subtitle: "* denotes equal contribution."
 ---
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
+<p><a href="{{ site.author.googlescholar }}">View my Google Scholar profile →</a></p>
 
-{% include base_path %}
-
-{% for post in site.publications reversed %}
-  {% include archive-publication.html %}
-{% endfor %} 
+<div class="pub-list">
+{% assign pubs = site.publications | sort: 'date' | reverse %}
+{% for post in pubs %}
+  {% include publication-item.html %}
+{% endfor %}
+</div>

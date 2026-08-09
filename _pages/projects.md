@@ -1,15 +1,10 @@
 ---
-layout: archive
+layout: page
 title: "Projects"
 permalink: /projects/
-author_profile: true
 ---
 
-{% if author.github %}
-  You can also find my projects on <u><a href="{{author.github}}">my Github profile</a>.</u>
-{% endif %}
-
-{% include base_path %}
+<p><a href="{{ site.author.github }}">More on my GitHub profile →</a></p>
 
 ### Amazon ML Challenge 2024
 **Duration:** September 2024  

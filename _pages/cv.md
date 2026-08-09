@@ -1,15 +1,11 @@
 ---
-layout: archive
+layout: page
 title: "CV"
 permalink: /cv/
-author_profile: true
+pdf: "https://drive.google.com/file/d/1mYMAOboAfukiZbaWqqAFtgimfJj5neHx/view?usp=sharing"
 redirect_from:
   - /resume
 ---
-
-{% include base_path %}
-
-[Download the PDF version](https://drive.google.com/file/d/1mYMAOboAfukiZbaWqqAFtgimfJj5neHx/view?usp=sharing)
 
 Education
 ======
@@ -54,9 +50,16 @@ Research Experience
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+<ul>
+{% assign pubs = site.publications | sort: 'date' | reverse %}
+{% for post in pubs %}
+  <li>
+    {% if post.link %}<a href="{{ post.link }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}.
+    {% if post.authors %}{{ post.authors }}. {% endif %}
+    <em>{{ post.venue }}</em>{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}.
+  </li>
+{% endfor %}
+</ul>
 
 Honors and Awards
 ======
