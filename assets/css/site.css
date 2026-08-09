@@ -1,9 +1,17 @@
 /* ---------------------------------------------------------------
    Medha Hira — site styles
-   Light palette is the base; dark tokens are redefined below.
+
+   Theming has three states:
+     - no data-theme attribute  -> follow the OS (prefers-color-scheme)
+     - data-theme="light"       -> forced light, even if the OS is dark
+     - data-theme="dark"        -> forced dark, even if the OS is light
+   The light palette is the base on bare :root so no colour is ever
+   defined only inside a media query. Dark tokens are declared twice:
+   once for the system default and once for the explicit override.
    --------------------------------------------------------------- */
 
 :root {
+  color-scheme: light;
   --bg: #fefdf9;
   --header-bg: rgba(254, 253, 249, 0.86);
   --ink: #253342;
@@ -15,7 +23,6 @@
   --rule: rgba(39, 55, 70, 0.28);
   --link: #244e76;
   --nav-link: #4f5d6b;
-  --award: #9e3a26;
   --chip-bg: rgba(229, 239, 248, 0.62);
   --chip-stroke: #86abdd;
   --code-bg: rgba(39, 55, 70, 0.06);
@@ -27,8 +34,10 @@
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
+/* Dark palette — system default (unless light is explicitly forced). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --bg: #14181d;
     --header-bg: rgba(20, 24, 29, 0.86);
     --ink: #e3e9f0;
@@ -40,13 +49,33 @@
     --rule: rgba(200, 215, 230, 0.3);
     --link: #8ab4e8;
     --nav-link: #aab6c3;
-    --award: #e0907a;
     --chip-bg: rgba(120, 160, 210, 0.14);
     --chip-stroke: #7ba3d6;
     --code-bg: rgba(200, 215, 230, 0.09);
     --portrait-ring: rgba(255, 255, 255, 0.14);
     --portrait-shadow: rgba(0, 0, 0, 0.5);
   }
+}
+
+/* Dark palette — explicitly chosen via the header toggle. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #14181d;
+  --header-bg: rgba(20, 24, 29, 0.86);
+  --ink: #e3e9f0;
+  --heading: #edf1f6;
+  --accent: #a9c8ee;
+  --text: #a6b2bf;
+  --muted: #7d8894;
+  --line: rgba(200, 215, 230, 0.13);
+  --rule: rgba(200, 215, 230, 0.3);
+  --link: #8ab4e8;
+  --nav-link: #aab6c3;
+  --chip-bg: rgba(120, 160, 210, 0.14);
+  --chip-stroke: #7ba3d6;
+  --code-bg: rgba(200, 215, 230, 0.09);
+  --portrait-ring: rgba(255, 255, 255, 0.14);
+  --portrait-shadow: rgba(0, 0, 0, 0.5);
 }
 
 * { box-sizing: border-box; }
@@ -114,6 +143,63 @@ img { max-width: 100%; }
 
 .nav a { color: var(--nav-link); }
 .nav-sep { color: var(--muted); opacity: 0.7; }
+
+/* --- Theme toggle ----------------------------------------------- */
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-left: 6px;
+  padding: 0;
+  flex: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--nav-link);
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--rule);
+  color: var(--ink);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Show the icon for the mode the button switches TO. Light shows a moon,
+   dark shows a sun. Mirrors the three-state token logic above. */
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+:root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
+/* Without JS the toggle cannot work, so don't show a dead control. */
+html:not(.js) .theme-toggle { display: none; }
 
 /* --- Hero ------------------------------------------------------ */
 
@@ -506,15 +592,18 @@ h1,
 
 .footer p { margin: 0; }
 
-/* --- Scroll-in animation (progressive enhancement) -------------- */
+/* --- Scroll-in animation (progressive enhancement) --------------
+   Gated on .anim, which the script adds only when it will actually
+   run. Kept separate from .js so the theme toggle never depends on
+   whether animations are enabled. */
 
-.js [data-animate] {
+.anim [data-animate] {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 700ms ease, transform 700ms ease;
 }
 
-.js [data-animate].is-visible {
+.anim [data-animate].is-visible {
   opacity: 1;
   transform: translateY(0);
 }

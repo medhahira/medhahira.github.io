@@ -29,7 +29,22 @@
   <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
   <link href="{{ '/feed.xml' | relative_url }}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    // Runs before first paint so a stored theme never flashes the other
+    // palette, and so [data-animate] blocks start hidden rather than
+    // appearing and then being hidden by a later script.
+    document.documentElement.classList.add("js");
+    try {
+      var stored = localStorage.getItem("theme");
+      if (stored === "light" || stored === "dark") {
+        document.documentElement.setAttribute("data-theme", stored);
+      }
+    } catch (e) {}
+    if ("IntersectionObserver" in window &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("anim");
+    }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -40,6 +55,15 @@
           {% if forloop.index0 > 0 %}<span class="nav-sep">/</span>{% endif %}
           <a href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}">{{ item.title }}</a>
         {% endfor %}
+        <button type="button" class="theme-toggle" aria-label="Switch to dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a6.8 6.8 0 0 0 10.8 10.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path d="M12 2.4v2.3M12 19.3v2.3M4.2 12H1.9M22.1 12h-2.3M6.5 6.5 4.9 4.9M19.1 19.1l-1.6-1.6M6.5 17.5l-1.6 1.6M19.1 4.9l-1.6 1.6"></path>
+          </svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -54,14 +78,50 @@
   </footer>
 
   <script>
+  // Theme toggle. No stored preference means "follow the OS", so the first
+  // click has to resolve what the OS is currently showing before flipping it.
   (function () {
+    var root = document.documentElement;
+    var btn = document.querySelector(".theme-toggle");
+    if (!btn) return;
+
+    var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    function activeTheme() {
+      var forced = root.getAttribute("data-theme");
+      if (forced === "light" || forced === "dark") return forced;
+      return darkQuery.matches ? "dark" : "light";
+    }
+
+    function syncLabel() {
+      var next = activeTheme() === "dark" ? "light" : "dark";
+      btn.setAttribute("aria-label", "Switch to " + next + " theme");
+    }
+
+    btn.addEventListener("click", function () {
+      var next = activeTheme() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      syncLabel();
+    });
+
+    // Keep the label honest if the OS flips while the page is open and the
+    // visitor has not made an explicit choice.
+    var onChange = function () {
+      if (!root.getAttribute("data-theme")) syncLabel();
+    };
+    if (darkQuery.addEventListener) darkQuery.addEventListener("change", onChange);
+    else if (darkQuery.addListener) darkQuery.addListener(onChange);
+
+    syncLabel();
+  })();
+
+  // Scroll-in animation. The .anim class was decided in <head>; if it is not
+  // set, [data-animate] blocks are plainly visible and there is nothing to do.
+  (function () {
+    if (!document.documentElement.classList.contains("anim")) return;
     var nodes = document.querySelectorAll("[data-animate]");
     if (!nodes.length) return;
-    if (!("IntersectionObserver" in window) ||
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      document.documentElement.classList.remove("js");
-      return;
-    }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) {
